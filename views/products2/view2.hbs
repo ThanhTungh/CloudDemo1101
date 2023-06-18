@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="row content">
+        <div class="col-sm-3 sidenav">
+            <h4>Toy store</h4>
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="/home">Home</a></li>
+                <li><a href="/products">Store in Ha Noi</a></li>
+                <li><a href="/products2">Store in HCM</a></li>
+                <br><br>
+                <div class="logout-btn">
+                    <a href="/logout" class="btn btn-primary">Logout</a>
+                </div>
+            </ul><br>
+        </div>
+        <div class="col-sm-9">
+            <form action="/products2/search" method="post">
+                Name <input type="text" name="name" placeholder="Search by title">
+                <input type="submit" value="Search">
+            </form>
+            <br>
+            <button><a href="/products2/add">Add new products</a></button>
+            <hr>
+            <table class="table bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Picture</th>
+                        <th>Price</th>
+                        <th>Delete</th>
+                        <th>Update</th>
+                    </tr>
+                </thead>
+                {{#each products2}}
+                <tr>
+                    <td>{{name}}</td>
+                    <td><img src="{{pictureURL}}" width="150" height="100"></td>
+                    <td>{{price}}$</td>
+                    <td><a href="/products2/delete/{{_id}}" onclick="return confirm('Are you sure?')">Delete</a></td>
+                    <td><a href="/products2/edit/{{_id}} ">Update</a></td>
+                </tr>
+                {{/each}}
+
+            </table>
+            <br><br>
+
+
+        </div>
+    </div>
+</div>
+
+<footer class="container-fluid">
+    <p style="margin-top: 10px; margin-bottom: 10px; margin-right: 150px; margin-left: 600px;">© 2023
+        Copyright:ThanhTung store</p>
+</footer>
