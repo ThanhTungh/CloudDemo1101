@@ -15,7 +15,9 @@ router.post('/check', async(req, res) => {
     if (username === 'admin' && password === '123456') {
         res.render('home', { title: 'Express' });
     } else {
-        res.send("<h1 style='color: red; background-color: yellow';>Login failed!</h1>");
+        // res.send("<h1 style='color: red; background-color: yellow';>Login failed!</h1> ");
+        loginFailed = true;
+        res.render('login', { loginFailed });
     }
 });
 router.get('/logout', async (req, res) => {
