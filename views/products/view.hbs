@@ -26,8 +26,11 @@
                         <th>Name</th>
                         <th>Picture</th>
                         <th>Price</th>
+                        <th>Video</th>
+                        <th>Category</th>
                         <th>Delete</th>
                         <th>Update</th>
+                        
                     </tr>
                 </thead>
                 {{#each products}}
@@ -35,6 +38,8 @@
                     <td>{{name}}</td>
                     <td><img src="{{pictureURL}}" width="150" height="100"></td>
                     <td>{{price}}$</td>
+                    <td><iframe src="https://www.youtube.com/embed/{{video}}" width="300" height="200"></iframe></td>
+                    <td>{{category}}</td>
                     <td><a href="/products/delete/{{_id}}" onclick="return confirm('Are you sure?')">Delete</a></td>
                     <td><a href="/products/edit/{{_id}} ">Update</a></td>
                 </tr>
