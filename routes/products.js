@@ -2,12 +2,12 @@ var express = require('express');
 const ProductsModel = require('../models/ProductsModel');
 var router = express.Router();
 
-router.get('/', async(req,res)=>{
+router.get('/', async (req, res) => {
     var products = await ProductsModel.find({});
-    res.render('products/view', {products: products})
+    res.render('products/view', { products: products })
 });
 
-router.get('/add',  async(req, res) => {
+router.get('/add', async (req, res) => {
     res.render('products/newproducts');
 });
 router.post('/add', async (req, res) => {
@@ -23,13 +23,13 @@ router.get('/delete/:id', async (req, res) => {
     res.redirect('/products');
 });
 
-router.get('/edit/:id', async(req,res)=>{
+router.get('/edit/:id', async (req, res) => {
     var product = await ProductsModel.findById(req.params.id);
-    res.render('products/editproducts', {product:product})
+    res.render('products/editproducts', { product: product })
 });
 
-router.post('/edit/:id', async(req,res)=>{
-    var product = await ProductsModel.findByIdAndUpdate(req.params.id,req.body);
+router.post('/edit/:id', async (req, res) => {
+    var product = await ProductsModel.findByIdAndUpdate(req.params.id, req.body);
     res.redirect('/products');
 });
 
@@ -40,3 +40,13 @@ router.post('/search', async (req, res) => {
 });
 
 module.exports = router;
+
+
+
+
+
+
+
+// price: { $gte: 150, $lte: 200 }
+
+
