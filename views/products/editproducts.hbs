@@ -32,6 +32,22 @@
                         value="{{product.pictureURL}}">
                     </div>
                     <div class="form-group mt-2 mb-2">
+                        <label for="">Video</label>
+                        <input class="form-control" type="text" name="video" required 
+                        value="{{product.video}}">
+                    </div>
+                    <div class="form-group mt-2 mb-2">
+                        <label for="">Category</label>
+                        <select class="form-control" name="category" required value="{{product.category}}">
+                            <option value="">Select a category</option>
+                            <option value="Action Figures">Action Figures</option>
+                            <option value="Dolls">Dolls</option>
+                            <option value="Board Games">Board Games</option>
+                            <option value="Puzzles">Puzzles</option>
+                            <option value="Plush Toys">Plush Toys</option>
+                        </select>
+                    </div>
+                    <div class="form-group mt-2 mb-2">
                         <input class="btn btn-danger" type="submit" value="Update">
                     </div>
                 </form>
